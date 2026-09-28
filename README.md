@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="D:\Proejt FInal year\powerguard-factory.svg" alt="PowerGuard animated isometric digital-twin factory" width="100%"/>
+<img src="https://github.com/Naveenkumar3327/Tripzo/blob/main/powerguard-factory.svg" alt="PowerGuard animated isometric digital-twin factory" width="100%"/>
 
 <br/>
 
