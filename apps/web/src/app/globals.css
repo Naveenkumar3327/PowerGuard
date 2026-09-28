@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --background: 5 8 12;
+    --foreground: 232 239 244;
+    --surface-1: #0a1016;
+    --surface-2: #0e161e;
+    --surface-3: #131e27;
+    --line: rgba(164, 190, 205, 0.12);
+    --muted: #82919b;
+    --cyan: #62d9e8;
+    --green: #8ad6a2;
+    --amber: #eabf72;
+    --danger: #ef7774;
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    background: #05080c;
+  }
+
+  body {
+    background-color: #05080c;
+    background-image:
+      linear-gradient(rgba(111, 155, 174, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(111, 155, 174, 0.025) 1px, transparent 1px),
+      radial-gradient(ellipse at 72% -15%, rgba(42, 104, 112, 0.14), transparent 45%);
+    background-size: 36px 36px, 36px 36px, auto;
+    color: #e8eff4;
+    font-family: 'Bahnschrift', 'Aptos', 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  ::selection {
+    color: #071014;
+    background: rgba(98, 217, 232, 0.75);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080d12;
+}
+::-webkit-scrollbar-thumb {
+  background: #30414b;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #526a75;
+}
+
+.card-industrial {
+  background: linear-gradient(145deg, rgba(15, 24, 31, 0.96), rgba(9, 15, 20, 0.96));
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.16);
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.card-industrial:hover {
+  border-color: rgba(98, 217, 232, 0.25);
+}
+
+.glow-text-emerald {
+  text-shadow: 0 0 16px rgba(138, 214, 162, 0.25);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 16px rgba(98, 217, 232, 0.25);
+}
+
+.glow-text-amber {
+  text-shadow: 0 0 16px rgba(234, 191, 114, 0.24);
+}
+
+.glow-text-danger {
+  text-shadow: 0 0 16px rgba(239, 119, 116, 0.25);
+}
+
+.command-label {
+  color: #82919b;
+  font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.telemetry-value {
+  font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.status-dot {
+  box-shadow: 0 0 10px currentColor;
+}
+
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  position: absolute;
+  inset: -100% 0 auto;
+  height: 60%;
+  background: linear-gradient(transparent, rgba(98, 217, 232, 0.035), transparent);
+  content: '';
+  pointer-events: none;
+  animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+  to { transform: translateY(360%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

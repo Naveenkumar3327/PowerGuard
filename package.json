@@ -1,0 +1,22 @@
+{
+  "name": "powerguard-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "POWERGUARD: AI-Based Factory Energy Management & Multi-Agent Machine Control System",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:all": "concurrently \"npm run dev --workspace=powerguard-api\" \"npm run dev --workspace=powerguard-web\" \"npm run dev:ai\"",
+    "dev:api": "npm run dev --workspace=powerguard-api",
+    "dev:web": "npm run dev --workspace=powerguard-web",
+    "dev:ai": "cd apps/ai-service && python main.py",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "seed": "npm run seed --workspace=powerguard-api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
